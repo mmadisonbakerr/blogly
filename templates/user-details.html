@@ -23,9 +23,27 @@
         <button type="submit">Delete User</button>
     </form>
 
-    <a href="/">
+    <h3>Posts</h3>
+    <ul>
+        {% for post in user.posts %}
+            <li>
+                <a href="/{{user.id}}/{{post.id}}">
+                    {{post.title}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="/{{user.id}}/add-post">
+        <button>Add Post</button>
+    </a>
+    <br>
+    <a href="/all-users"> 
         <button>Back to Users</button>
     </a>
-
+    <br>
+    <a href="/"> 
+        <button>Back to Home</button>
+    </a>
 </body>
 </html>

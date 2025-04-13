@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.first_name}}'s Post</title>
+</head>
+<body>
+    <h1>Post Details</h1>
+
+    <h2>{{post.title}}</h2>
+    <p>{{post.content}}</p>
+
+    <h3>Created by: {{user.first_name}} {{user.last_name}}</h3>
+    <h4>Created at: {{post.created_at}}</h4>
+
+    <a href="/{{user.id}}/{{post.id}}/edit">
+        <button>Edit</button>
+    </a>
+
+    <form action="/{{user.id}}/{{post.id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+
+    <a href="/{{user.id}}">
+        <button>Back</button>
+    </a>
+    
+</body>
+</html>
