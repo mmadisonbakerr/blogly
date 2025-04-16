@@ -12,8 +12,13 @@
     <ul>
         {% for post in posts %}
             <li>
-                <p>{{post.title}}</p>
+                <a href="/{{post.user.id}}/{{post.id}}">
+                    <h3>{{post.title}}</h3>
+                </a>
                 <p>{{post.content}}</p>
+                <small>by: {{post.user.first_name}} {{post.user.last_name}}</small>
+
+                <small>on {{post.created_at}}</small>
             </li>
         {% endfor %}
     </ul>

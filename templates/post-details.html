@@ -14,6 +14,16 @@
     <h3>Created by: {{user.first_name}} {{user.last_name}}</h3>
     <h4>Created at: {{post.created_at}}</h4>
 
+    <ul>
+        <li>
+            tags:
+            {% for tag in post.tags %}
+                <a href="/tags/{{tag.id}}">{{tag.name}}</a>
+                {% if not loop.last %}, {% endif %}
+            {% endfor %}
+        </li>
+    </ul>
+
     <a href="/{{user.id}}/{{post.id}}/edit">
         <button>Edit</button>
     </a>

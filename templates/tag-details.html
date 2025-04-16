@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags and Posts</title>
+</head>
+<body>
+
+    <h1>{{ tag.name }}</h1>
+
+    {% if tag.posts|length == 0 %}
+        <p>No posts available for this tag.</p>
+    {% else %}
+        <ul>
+            {% for post in tag.posts %}
+                <li>
+                    <a href="/{{ post.user.id }}/{{ post.id }}">{{ post.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="/tags/{{ tag.id }}/edit">
+        <button>Edit</button>
+    </a>
+
+    <form action="/tags/{{ tag.id }}/delete" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+
+    <a href="/tags">
+        <button>Back to Tags</button>
+    </a>
+
+</body>
+</html>

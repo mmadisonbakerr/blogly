@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tags</title>
+</head>
+<body>
+    <h1>All Tags</h1>
+    <ul>
+        {%for tag in tags%}
+        <a href="/tags/{{tag.id}}">
+            <li>{{tag.name}}</li>
+        </a>
+        {% endfor %}
+    </ul>
+    <a href="/tags/new">
+        <button type="button">Add a Tag</button>
+    </a>
+    <br>
+    <a href="/">
+        <button type="button">Back to Home</button>
+    </a>
+</body>
+</html>
